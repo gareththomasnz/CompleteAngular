@@ -5,11 +5,7 @@ import {
 	Component
 } from '@angular/core';
 
-export class CoursesService {
-	getCourses() {
-		return ["Course1", "Course2", "Course3"];
-	}
-}
+
 
 @Component({
 	selector: 'courses',
@@ -23,11 +19,41 @@ export class CoursesService {
               (click)="onSave($event)">
               Save
             </button>
+           
+            <input [(ngModel)]="email" (keyup.enter)="onKeyUp()"/><br/>
+           <div class="panel panel-default">
+            <div class="panel-body">
+              {{course.title | uppercase | lowercase}} <br/>
+              {{course.rating | number}} <br/>
+              {{course.students | number: '2.1-1'}} <br/>
+              {{course.price | currency:'AUD':true:'3.2-2'}} <br/>
+              {{course.releaseDate | date:shortDate}} <br/>
+            </div>
+          </div>
           </div>
           `
 })
 
+
+//export class CoursesService {
+//	getCourses() {
+//		return ["Course1", "Course2", "Course3"];
+//	}
+//}
+
+
 export class CoursesComponent {
+  
+  course = {
+    title: "The Complete Angular Course",
+    rating: 4.9745,
+    students: 30123,
+    price: 190.95,
+    releaseDate: new Date(2016, 3, 1)
+  }
+  
+   email = "Enter your email";
+  
 	title = "List of courses";
 	courses;
   isActive = true;
@@ -43,6 +69,10 @@ export class CoursesComponent {
     $event.stopPropagation();
     
     console.log("button was clicked", $event);
+  }
+  
+  onKeyUp(){
+    console.log(this.email);
   }
 
 	constructor() {
