@@ -1,3 +1,4 @@
-.glyphicon-star{
-            color: orange;
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+.glyphicon{
+  color: red;
 }

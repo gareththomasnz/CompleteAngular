@@ -4,6 +4,7 @@ import {Component, onInit, Input, Output, EventEmitter} from '@angular/core';
     selector: 'favorite',
     templateUrl: './favorite.component.html',
     styleUrls: './favorite.component.css'
+    encapsulation: ViewEncapsulation.None;
   })
 
 export interface FavoriteChangedEventArgs{
@@ -12,7 +13,7 @@ export interface FavoriteChangedEventArgs{
 
 export class FavoriteComponent implements OnInit {
 @Input('is-favorite') isFavorite: boolean;
-@Output() change = new eventEmitter();
+@Output('change') click = new eventEmitter();
 
   constructor() {}
   
