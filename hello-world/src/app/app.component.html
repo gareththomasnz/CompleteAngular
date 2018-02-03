@@ -5,9 +5,13 @@
 </favorite>
 
 <bootstrap-panel>
-  <ng-container class="heading">Heading</ng-container>
-  <div class="body">
-    <h2>Body</h2>
-    <p>content</p>
-  </div>
+	<ng-container class="heading">Heading</ng-container>
+	<div class="body">
+		<h2>Body</h2>
+		<p>content</p>
+	</div>
+	<div *ngIf="courses.length > 0; then coursesList else noCourses">Full list of courses
+		<div ng-template #coursesList>Courses list</div>
+		<div ng-template #noCourses>No courses yet</div>
+	</div>
 </bootstrap-panel>

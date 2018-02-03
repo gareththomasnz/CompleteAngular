@@ -14,6 +14,7 @@ export class AppComponent {
     title:"Angular app",
     isFavorite: true
   }
+  courses = [1, 2];
 
   onFavoriteChange(eventArgs: {EventArgs: FavoriteChangedEventArgs}){
     console.log("Favorite changed", eventArgs);

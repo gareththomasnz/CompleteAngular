@@ -3,8 +3,8 @@ import {Component, onInit, Input, Output, EventEmitter} from '@angular/core';
 @Component({
     selector: 'favorite',
     templateUrl: './favorite.component.html',
-    styleUrls: './favorite.component.css'
-    encapsulation: ViewEncapsulation.None;
+    styleUrls: './favorite.component.css',
+    encapsulation: ViewEncapsulation.None
   })
 
 export interface FavoriteChangedEventArgs{
