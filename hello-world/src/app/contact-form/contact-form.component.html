@@ -1,0 +1,44 @@
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  
+  <div ngModelGroup="contact" #contact="ngModelGroup">
+      <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+             required
+             minlength="3"
+             ngModel
+             name="firstName"
+             #firstName="ngModel"
+             (change)="log(firstName)"
+             type="text"
+             class="form-control"
+             id="firstName">
+      <div
+           class="alert alert-danger"
+           *ngIf="firstName.touched && !firstName.valid">
+        <div *ngIf="firstName.errors.required">
+          First Name is required
+        </div>
+        <div *ngIf="firstName.errors.minlength.requiredLength">
+          First min 3 char is required
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+	<div class="form-group">
+		<label for="comment">Comment</label>
+		<textarea
+              ngModel
+              name="comment"
+              type="text"
+              cols="30"
+              rows="10"
+              class="form-control"
+              id="comment">
+  </div>
+  
+  <button class="btn- btn-primary">Submit</button>
+  
+</form>

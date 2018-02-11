@@ -7,6 +7,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { PanelComponent } from './panel/panel.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { PanelComponent } from './panel/panel.component';
     AppComponent,
     CoursesComponent,
     CourseComponent,
-    PanelComponent
+    PanelComponent,
+    ContactFormComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,
