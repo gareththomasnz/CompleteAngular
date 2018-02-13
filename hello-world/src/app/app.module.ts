@@ -1,6 +1,6 @@
 import { CoursesComponent } from './courses.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 
@@ -9,6 +9,7 @@ import { CourseComponent } from './course/course.component';
 import { PanelComponent } from './panel/panel.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 
 @NgModule({
@@ -18,11 +19,13 @@ import { FavoriteComponent } from './favorite/favorite.component';
     CourseComponent,
     PanelComponent,
     ContactFormComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
               //CoursesService
