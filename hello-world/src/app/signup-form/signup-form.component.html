@@ -14,7 +14,11 @@
            id="username"
            type="text"
            class="form-control">
-    <div *ngIf="username.touched && username.invalid" class="alert alert-danger">Username is required</div>
+    <div *ngIf="username.touched && username.invalid" class="alert alert-danger"></div>
+      <div *ngIf="username.erros.required">Username is required</div>
+      <div *ngIf="username.erros.minlength">Username should be minimum {3}{ username.errors.minlength.requiredLength}} characters</div>
+      <div *ngIf="username.erros.cannotContainSpace">Username cant contain a space</div>
+      <div *ngIf="username.erros.shouldBeUnique">Username already in use</div>
 	</div>
 	<button
           class="btn btn-primary"
